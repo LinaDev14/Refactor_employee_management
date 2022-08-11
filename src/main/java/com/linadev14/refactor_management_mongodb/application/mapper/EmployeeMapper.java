@@ -22,4 +22,18 @@ public class EmployeeMapper {
           employee.getGender()
         );
     }
+
+    // FROM EMPLOYEE_DTO TO EMPLOYEE
+    public Function<EmployeeDTO, Employee> mapToEmployee(){
+
+        return employeeDTO -> new Employee(
+                employeeDTO.getId(),
+                employeeDTO.getFirstName(),
+                employeeDTO.getLastName(),
+                employeeDTO.getEmail(),
+                employeeDTO.getPhoneNumber(),
+                employeeDTO.getCountry(),
+                employeeDTO.getGender()
+        );
+    }
 }

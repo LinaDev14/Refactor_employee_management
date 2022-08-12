@@ -11,8 +11,8 @@ import java.util.List;
 public interface EmployeeRepository extends MongoRepository<Employee, String> {
 
     // find employees by firstname
-    List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName);
+    List<Employee> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName);
 
     // find employees by last name
-    List<EmployeeDTO> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName);
+    List<Employee> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName);
 }

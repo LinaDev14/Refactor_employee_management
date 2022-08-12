@@ -1,5 +1,6 @@
 package com.linadev14.refactor_management_mongodb.application.service;
 import com.linadev14.refactor_management_mongodb.application.mapper.EmployeeMapper;
+import com.linadev14.refactor_management_mongodb.domain.document.Employee;
 import com.linadev14.refactor_management_mongodb.domain.dto.EmployeeDTO;
 import com.linadev14.refactor_management_mongodb.domain.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
@@ -45,16 +46,17 @@ public class EmployeeService implements EmployeeServiceInterface{
     }
 
     @Override
-    public List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName) {
-
-        return employeeRepository.
-    }
-
-    @Override
-    public List<EmployeeDTO> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName) {
+    public List<EmployeeDTO> findByFirstName(String firstName) {
 
         return null;
     }
+
+    @Override
+    public List<EmployeeDTO> findByLastName(String lastName) {
+
+        return null;
+    }
+
 
     @Override
     public EmployeeDTO updateEmployee(EmployeeDTO employeeDTO) {

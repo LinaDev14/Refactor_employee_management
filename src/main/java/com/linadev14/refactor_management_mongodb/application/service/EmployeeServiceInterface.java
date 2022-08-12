@@ -1,4 +1,5 @@
 package com.linadev14.refactor_management_mongodb.application.service;
+import com.linadev14.refactor_management_mongodb.domain.document.Employee;
 import com.linadev14.refactor_management_mongodb.domain.dto.EmployeeDTO;
 
 import java.util.List;
@@ -16,10 +17,10 @@ public interface EmployeeServiceInterface {
     Optional<EmployeeDTO> findById(String id);
 
     // find employees by firstname
-    List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName);
+    List<EmployeeDTO> findByFirstName(String firstName);
 
-    // find employees by last name
-    List<EmployeeDTO> findAllByLastNameContainingIgnoreCaseOrderByLastName(String lastName);
+    // find employees by lastname
+    List<EmployeeDTO> findByLastName(String lastName);
 
     // update employee
     EmployeeDTO updateEmployee(EmployeeDTO employeeDTO);

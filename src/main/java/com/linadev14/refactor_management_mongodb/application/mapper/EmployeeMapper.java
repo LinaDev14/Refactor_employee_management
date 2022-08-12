@@ -10,21 +10,22 @@ import java.util.function.Function;
 public class EmployeeMapper {
 
     // FROM EMPLOYEE TO EMPLOYEE_DTO
-    public Function<Employee, EmployeeDTO> mapToEmployeeDTO(){
+    public Function<Employee, EmployeeDTO> mapToDTOEmployee(){
 
         return employee -> new EmployeeDTO(
-          employee.getId(),
-          employee.getFirstName(),
-          employee.getLastName(),
-          employee.getEmail(),
-          employee.getPhoneNumber(),
-          employee.getCountry(),
-          employee.getGender()
+
+                employee.getId(),
+                employee.getFirstName(),
+                employee.getLastName(),
+                employee.getEmail(),
+                employee.getPhoneNumber(),
+                employee.getCountry(),
+                employee.getGender()
         );
     }
 
     // FROM EMPLOYEE_DTO TO EMPLOYEE
-    public Function<EmployeeDTO, Employee> mapToEmployee(){
+    public Function<EmployeeDTO, Employee> mapToCollectionEmployee(){
 
         return employeeDTO -> new Employee(
                 employeeDTO.getId(),

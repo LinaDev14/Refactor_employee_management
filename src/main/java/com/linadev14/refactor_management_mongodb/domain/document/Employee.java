@@ -12,6 +12,7 @@ public class Employee {
 
     @Id
     private final String id;
+
     private final String firstName;
     private final String lastName;
     private final String email;

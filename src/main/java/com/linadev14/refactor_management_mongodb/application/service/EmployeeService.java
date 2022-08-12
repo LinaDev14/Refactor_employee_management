@@ -3,6 +3,7 @@ import com.linadev14.refactor_management_mongodb.application.mapper.EmployeeMapp
 import com.linadev14.refactor_management_mongodb.domain.document.Employee;
 import com.linadev14.refactor_management_mongodb.domain.dto.EmployeeDTO;
 import com.linadev14.refactor_management_mongodb.domain.repository.EmployeeRepository;
+import com.linadev14.refactor_management_mongodb.domain.utils.MessageResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -67,13 +68,20 @@ public class EmployeeService implements EmployeeServiceInterface{
     @Override
     public EmployeeDTO updateEmployee(EmployeeDTO employeeDTO) {
 
-        return null;
+
+        if(employeeRepository.findById(employeeDTO.getId()).isEmpty()){
+            throw new IllegalArgumentException(MessageResponse.EMPLOYEE_NOT_FOUND);
+        }
+        return employeeMapper.mapToDTOEmployee().apply(employeeRepository.save(employeeMapper.mapToCollectionEmployee().apply(employeeDTO)));
     }
 
     @Override
     public EmployeeDTO saveEmployee(EmployeeDTO employeeDTO) {
 
-        return null;
+        return employeeMapper.mapToDTOEmployee()
+                .apply(employeeRepository.save(employeeMapper.mapToCollectionEmployee()
+                        .apply(employeeDTO)
+                ));
     }
 
     @Override

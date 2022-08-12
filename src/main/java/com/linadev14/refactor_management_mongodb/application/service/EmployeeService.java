@@ -20,7 +20,12 @@ public class EmployeeService implements EmployeeServiceInterface{
     @Override
     public List<EmployeeDTO> fillData(List<EmployeeDTO> employeeDTO) {
 
-        return null;
+        return employeeRepository.saveAll(employeeDTO.stream()
+                .map(employeeMapper.mapToCollectionEmployee())
+                .collect(Collectors.toList()))
+                .stream()
+                .map(employeeMapper.mapToDTOEmployee())
+                .collect(Collectors.toList());
     }
 
     @Override

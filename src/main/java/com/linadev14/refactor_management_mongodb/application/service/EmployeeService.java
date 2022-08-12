@@ -86,11 +86,13 @@ public class EmployeeService implements EmployeeServiceInterface{
 
     @Override
     public void deleteEmployee(String id) {
+        employeeRepository.deleteById(id);
 
     }
 
     @Override
     public void deleteAllEmployees() {
+        employeeRepository.deleteAll();
 
     }
 

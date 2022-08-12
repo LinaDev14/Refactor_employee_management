@@ -48,7 +48,10 @@ public class EmployeeService implements EmployeeServiceInterface{
     @Override
     public List<EmployeeDTO> findByFirstName(String firstName) {
 
-        return null;
+        return employeeRepository.findAllByFirstNameContainingIgnoreCaseOrderByFirstName(firstName)
+                .stream()
+                .map(employeeMapper.mapToDTOEmployee())
+                .collect(Collectors.toList());
     }
 
     @Override

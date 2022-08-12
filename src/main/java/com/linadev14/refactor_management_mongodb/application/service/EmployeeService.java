@@ -47,7 +47,7 @@ public class EmployeeService implements EmployeeServiceInterface{
     @Override
     public List<EmployeeDTO> findAllByFirstNameContainingIgnoreCaseOrderByFirstName(String firstName) {
 
-        return null;
+        return employeeRepository.
     }
 
     @Override
